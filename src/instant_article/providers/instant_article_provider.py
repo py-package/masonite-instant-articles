@@ -15,7 +15,6 @@ class InstantArticleProvider(PackageProvider):
             .views("views", publish=True)
             
         )
-        print('fuck')
 
     def register(self):
         # super().register()
