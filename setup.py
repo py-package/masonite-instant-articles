@@ -9,8 +9,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.1',
-    package_dir={'': 'src'},
+    version='0.0.2',
 
     description='The Official Masonite Debugbar',
     long_description=long_description,
@@ -70,11 +69,12 @@ setup(
         'instant_article.providers',
         'instant_article.routes',
         'instant_article.models',
-        'instant_article.views',
         'instant_article.interfaces',
         'instant_article.config',
         'instant_article.commands',
     ],
+    
+    package_dir={"": "src"},
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
