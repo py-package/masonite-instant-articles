@@ -3,7 +3,6 @@ from ..controllers.instant_article_controller import InstantArticleController
 
 ROUTES = Route.group(
     [
-        Route.get("/iarticle", InstantArticleController.index),
-        Route.get("/iarticle/@model", InstantArticleController.feeds),
+        Route.get("/rss/@content", InstantArticleController.feeds),
     ]
 )
