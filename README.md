@@ -84,7 +84,7 @@ class YourModel(Model, InstantArticleInterface):
 
     @staticmethod
     def get_feed_items():
-        return Category.all()
+        return YourModel.all() # can be any query returning proper values
 
     def format_feed(self):
         return InstantArticle.create({

@@ -1,8 +1,8 @@
-from masonite.controllers import Controller
-from masonite.views import View
-from masonite.response import Response
-from masonite.request import Request
 from masonite.configuration import config
+from masonite.controllers import Controller
+from masonite.request import Request
+from masonite.response import Response
+from masonite.views import View
 
 from ..models.instant_article_resolver import InstantArticleResolver
 

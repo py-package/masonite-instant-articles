@@ -5,14 +5,12 @@ from ..routes import ROUTES
 
 
 class InstantArticleProvider(PackageProvider):
-    
     def configure(self):
         (
             self.root("instant_article")
             .name("instant_article")
             .config("config/instant_article.py", publish=True)
             .views("views", publish=True)
-            
         )
 
     def register(self):

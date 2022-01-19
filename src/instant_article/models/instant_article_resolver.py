@@ -1,8 +1,10 @@
+import importlib
 from datetime import datetime
+
+from masonite.response import Response
+
 from ..interfaces.instant_article_interface import InstantArticleInterface
 from .instant_article import InstantArticle
-from masonite.response import Response
-import importlib
 
 
 class InstantArticleResolver:
@@ -40,9 +42,9 @@ class InstantArticleResolver:
         }
 
         self._response.header("Content-Type", "application/xml;charset=UTF-8")
-        if self._feed_type == 'feed':
-            return self._view.render('instant_article.feeds', data)
-        return self._view.render('instant_article.instant-article', data)
+        if self._feed_type == "feed":
+            return self._view.render("instant_article.feeds", data)
+        return self._view.render("instant_article.instant-article", data)
 
     def _resolve_items(self, resolver):
         try:
