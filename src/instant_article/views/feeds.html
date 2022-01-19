@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>{{ title }}</title>
+        <link>{{ link }}</link>
+        <description>{{ description }}</description>
+        <language>{{ language }}</language>
+        <lastBuildDate>{{ last_updated }}</lastBuildDate>
+        <generator>
+            Instant Articles - https://github.com/yubarajshrestha/masonite-instant-articles
+        </generator>
+        {% for article in articles %}
+        <item>
+            <title>{{ article.title }}</title>
+            <link>{{ article.link }}</link>
+            <description>{{ article.description }}</description>
+            <guid isPermaLink="false">{{ article.id }}</guid>
+            <pubDate>{{ article.published }}</pubDate>
+            {% if article.author %}
+                <author>{{ article.author }}</author>
+            {% endif %}
+            {% if article.cover %}
+                <image>
+                    <url>{{ article.cover }}</url>
+                    <title>{{ article.title }}</title>
+                    <link>{{ article.link }}</link>
+                </image>
+            {% endif %}
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

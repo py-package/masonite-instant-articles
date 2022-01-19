@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>{{ title }}</title>
+        <link>{{ link }}</link>
+        <description>{{ description }}</description>
+        <language>{{ language }}</language>
+        <lastBuildDate>{{ last_updated }}</lastBuildDate>
+        <generator>
+            Instant Articles - https://github.com/yubarajshrestha/masonite-instant-articles
+        </generator>
+        {% for article in articles %}
+        <item>
+            <title>{{ article.title }}</title>
+            <link>{{ article.link }}</link>
+            <description>{{ article.description }}</description>
+            <guid isPermaLink="false">{{ article.id }}</guid>
+            <pubDate>{{ article.published }}</pubDate>
+            <author>{{ article.author }}</author>
+            <content:encoded>
+                <![CDATA[
+                    <!doctype html>
+                    <html lang="ne" prefix="op: http://media.facebook.com/op#">
+                        <head>
+                            <meta charset="utf-8">
+                            <link rel="canonical" href="{{ article.link }}">
+                            <meta property="op:markup_version" content="v1.0">
+                        </head>
+                    <body>
+                        <article>
+                            <header>
+                                <h1>{{ article.title }}</h1>
+                                {% if article.subtitle %}
+                                <h2>{{ article.subtitle }}</h2>
+                                {% endif %}
+                                <time class="op-published" datetime="{{ article.published }}">{{ article.published }}</time>
+                                <time class="op-modified" dateTime="{{ article.updated }}">{{ article.updated }}</time>
+                                <address>{{ article.author }}</address>
+                                {% if article.cover %}
+                                <figure>
+                                    <img src="{{ article.cover }}" />
+                                    <figcaption>{{ article.title }}</figcaption>
+                                </figure>
+                                {% endif %}
+                                {% if article.kicker %}
+                                <h3 class="op-kicker">{{ article.kicker }}</h3>
+                                {% endif %}
+                            </header>
+                            {{ article.description }}
+                            <footer><aside>{{ brand }}</aside><small>© Copyright {{ year }}</small></footer>
+                        </article>
+                    </body>
+                    </html>
+                ]]>
+            </content:encoded>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

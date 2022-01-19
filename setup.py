@@ -69,8 +69,11 @@ setup(
         'instant_article.controllers',
         'instant_article.providers',
         'instant_article.routes',
-        'instant_article.scaffold',
+        'instant_article.models',
         'instant_article.views',
+        'instant_article.interfaces',
+        'instant_article.config',
+        'instant_article.commands',
     ],
 
     # List additional groups of dependencies here (e.g. development
