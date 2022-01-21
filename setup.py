@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -71,9 +71,8 @@ setup(
         'instant_article.models',
         'instant_article.interfaces',
         'instant_article.config',
-        'instant_article.commands',
     ],
-    
+
     package_dir={"": "src"},
 
     # List additional groups of dependencies here (e.g. development
