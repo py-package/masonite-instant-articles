@@ -10,3 +10,6 @@ class InstantArticleProvider(PackageProvider):
             .views("views", publish=True)
             .routes("routes/route.py")
         )
+
+    def register(self):
+        super().register()
