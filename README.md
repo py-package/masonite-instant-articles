@@ -14,15 +14,29 @@ Install package by executing the following command.
 pip install masonite-instant-article
 ```
 
-##### Step 2: Publish Resource Files
+##### Step 2: Add provider to your project
+
+Add `InstantArticleProvider` into your project providers:
+
+```python
+# config/providers
+from instant_article.providers import InstantArticleProvider
+
+PROVIDERS = [
+    # ...
+    InstantArticleProvider
+]
+```
+
+##### Step 3: Publish Resources Files
 
 You need to have some files setup and don't worry it's quite easy. You just have to execute the following command.
 
 ```shell
-python craft instant_article
+python craft package:publish instant_article
 ```
 
-##### Step 3: Update Configurations
+##### Step 4: Update Configurations
 
 You need to define options in your `instant_article` configuration file inside `config` directory.
 
@@ -72,7 +86,7 @@ https://your-domain.com/rss/news-rss.xml
 """
 ```
 
-#### Step 4: Implement Instant Article Interface to your Model and configure as follows
+#### Step 5: Implement Instant Article Interface to your Model and configure as follows
 
 ```python
 from instant_article.interfaces.instant_article_interface import InstantArticleInterface
@@ -102,6 +116,6 @@ class YourModel(Model, InstantArticleInterface):
         })
 ```
 
-##### Step 5: Awesome
+##### Step 6: Awesome
 
 1. Your project is now ready to go :+1:.
