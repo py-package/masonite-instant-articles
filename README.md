@@ -1,42 +1,55 @@
 # Instant Articles
 
+<p align="center">
+    <img src="https://banners.beyondco.de/instant-article.png?theme=light&packageManager=pip+install&packageName=masonite-instant-article&pattern=topography&style=style_1&description=File management solution for Masonite&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Fgblobscdn.gitbook.com%2Fspaces%2F-L9uc-9XAlqhXkBwrLMA%2Favatar.png">
+</p>
+
+<p align="center">
+  
+  <img alt="GitHub Workflow Status" src="https://github.com/yubarajshrestha/masonite-instant-article/actions/workflows/python-package.yml/badge.svg">
+  <img alt="PyPI" src="https://img.shields.io/pypi/v/masonite-instant-article">
+  <img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version">
+  <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/yubarajshrestha/masonite-instant-articles">
+  <img alt="License" src="https://img.shields.io/github/license/yubarajshrestha/masonite-instant-articles">
+  <a href="https://github.com/yubarajshrestha/masonite-instant-article/stargazers"><img alt="star" src="https://img.shields.io/github/stars/yubarajshrestha/masonite-instant-articles" /></a>
+  <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
+
 **If you are seeking package for generating instant article or feeds in Masonite then yes, this package is for you.**
 
 > This helps you generate facebooks instant articles and also regular feeds with enough customizations you might need.
 
-### How to?
-
-##### Step 1: Install package
-
-Install package by executing the following command.
+## Installation
 
 ```shell
 pip install masonite-instant-article
 ```
 
-##### Step 2: Add provider to your project
+## Configuration
 
-Add `InstantArticleProvider` into your project providers:
+Add `InstantArticleProvider` to your project in `config/providers.py`:
 
 ```python
-# config/providers
+# config/providers.py
+# ...
 from instant_article.providers import InstantArticleProvider
 
+# ...
 PROVIDERS = [
     # ...
+    # Third Party Providers
     InstantArticleProvider
+    # ...
 ]
 ```
 
-##### Step 3: Publish Resources Files
+Then you can publish the configuration by doing:
 
-You need to have some files setup and don't worry it's quite easy. You just have to execute the following command.
-
-```shell
+```bash
 python craft package:publish instant_article
 ```
 
-##### Step 4: Update Configurations
+## Update Configurations
 
 You need to define options in your `instant_article` configuration file inside `config` directory.
 
@@ -86,7 +99,7 @@ https://your-domain.com/rss/news-rss.xml
 """
 ```
 
-#### Step 5: Implement Instant Article Interface to your Model and configure as follows
+## Implementation
 
 ```python
 from instant_article.interfaces.instant_article_interface import InstantArticleInterface
@@ -116,6 +129,12 @@ class YourModel(Model, InstantArticleInterface):
         })
 ```
 
-##### Step 6: Awesome
+Your project is now ready to go :+1:.
 
-1. Your project is now ready to go :+1:.
+## Contributing
+
+Please read the [Contributing Documentation](CONTRIBUTING.md) here.
+
+## License
+
+masonite-filemanager is open-sourced software licensed under the [MIT license](LICENSE).
