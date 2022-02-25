@@ -6,7 +6,7 @@
 
 <p align="center">
   
-  <img alt="GitHub Workflow Status" src="https://github.com/yubarajshrestha/masonite-instant-article/actions/workflows/python-package.yml/badge.svg">
+  <img alt="GitHub Workflow Status" src="https://github.com/yubarajshrestha/masonite-instant-articles/actions/workflows/python-package.yml/badge.svg">
   <img alt="PyPI" src="https://img.shields.io/pypi/v/masonite-instant-article">
   <img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version">
   <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/yubarajshrestha/masonite-instant-articles">
