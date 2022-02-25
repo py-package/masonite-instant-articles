@@ -65,12 +65,13 @@ setup(
     # simple. Or you can use find_packages().
     packages=[
         'instant_article',
+        'instant_article.config',
         'instant_article.controllers',
+        'instant_article.interfaces',
+        'instant_article.models',
         'instant_article.providers',
         'instant_article.routes',
-        'instant_article.models',
-        'instant_article.interfaces',
-        'instant_article.config',
+        'instant_article.templates',
     ],
 
     package_dir={"": "src"},

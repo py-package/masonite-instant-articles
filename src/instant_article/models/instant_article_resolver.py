@@ -43,8 +43,8 @@ class InstantArticleResolver:
 
         self._response.header("Content-Type", "application/xml;charset=UTF-8")
         if self._feed_type == "feed":
-            return self._view.render("instant_article.feeds", data)
-        return self._view.render("instant_article.instant-article", data)
+            return self._view.render("instant_article:feeds", data)
+        return self._view.render("instant_article:instant-article", data)
 
     def _resolve_items(self, resolver):
         try:
@@ -77,9 +77,7 @@ class InstantArticleResolver:
             return instant_article
 
         if not isinstance(instant_article, InstantArticleInterface):
-            raise Exception(
-                "InstantArticle must be an instance of InstantArticleInterface"
-            )
+            raise Exception("InstantArticle must be an instance of InstantArticleInterface")
 
         feed_item = instant_article.format_feed()
 

@@ -1,0 +1,145 @@
+Metadata-Version: 2.1
+Name: masonite-instant-article
+Version: 0.0.6
+Summary: Instant Article for Masonite
+Home-page: https://github.com/yubarajshrestha/masonite-instant-articles
+Author: Yubaraj Shrestha
+Author-email: companion.krish@gmail.com
+License: MIT
+Keywords: masonite instant articles
+Platform: UNKNOWN
+Classifier: Framework :: Masonite
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Provides-Extra: test
+License-File: LICENSE
+
+# Instant Articles
+
+**If you are seeking package for generating instant article or feeds in Masonite then yes, this package is for you.**
+
+> This helps you generate facebooks instant articles and also regular feeds with enough customizations you might need.
+
+### How to?
+
+##### Step 1: Install package
+
+Install package by executing the following command.
+
+```shell
+pip install masonite-instant-article
+```
+
+##### Step 2: Add provider to your project
+
+Add `InstantArticleProvider` into your project providers:
+
+```python
+# config/providers
+from instant_article.providers import InstantArticleProvider
+
+PROVIDERS = [
+    # ...
+    InstantArticleProvider
+]
+```
+
+##### Step 3: Publish Resources Files
+
+You need to have some files setup and don't worry it's quite easy. You just have to execute the following command.
+
+```shell
+python craft package:publish instant_article
+```
+
+##### Step 4: Update Configurations
+
+You need to define options in your `instant_article` configuration file inside `config` directory.
+
+```python
+# config
+INSTANT_ARTICLE = {
+    "force_validate": False,
+    "feed_details": {
+        "your-custom-route-name.xml": {
+            'model': 'path-to-your-model-class',
+            'title': '',
+            'description': '',
+            'lang': 'en-us',
+            'brand': '',
+            'type': 'instant-article' # feed, instant-article
+        }
+    }
+}
+
+# Example
+INSTANT_ARTICLE = {
+    "force_validate": False,
+    "feed_details": {
+        "blogs-rss.xml": {
+            'model': 'app.models.Blog',
+            'title': 'Blog Feed',
+            'description': '',
+            'lang': 'en-us',
+            'brand': '',
+            'type': 'instant-article' # feed, instant-article
+        },
+        "news-rss.xml": {
+            'model': 'app.models.News',
+            'title': 'News Feed',
+            'description': '',
+            'lang': 'en-us',
+            'brand': '',
+            'type': 'instant-article' # feed, instant-article
+        }
+    }
+}
+
+# Above feeds can be access from:
+"""
+https://your-domain.com/rss/blogs-rss.xml
+https://your-domain.com/rss/news-rss.xml
+"""
+```
+
+#### Step 5: Implement Instant Article Interface to your Model and configure as follows
+
+```python
+from instant_article.interfaces.instant_article_interface import InstantArticleInterface
+from instant_article.models.instant_article import InstantArticle
+
+
+class YourModel(Model, InstantArticleInterface):
+
+
+    @staticmethod
+    def get_feed_items():
+        return YourModel.all() # can be any query returning proper values
+
+    def format_feed(self):
+        return InstantArticle.create({
+            'id': self.id, # required | integer
+            'title': self.name, # required | string
+            'subtitle': '', # nullable | string
+            'kicker': '', # nullable | string
+            'summary': '', # required | string
+            'description': '', # required | string
+            'cover': '', # nullable | string
+            'updated': self.updated_at, # required | date
+            'published': self.created_at, # required | date
+            'link': '', # full url to item...
+            'author': '' # nullable | email | string
+        })
+```
+
+##### Step 6: Awesome
+
+1. Your project is now ready to go :+1:.
+
+

@@ -1,35 +1,28 @@
-init:
+.PHONY: help
+help: ## Show this help
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+init: ## Install package dependencies
+	cp .env-example .env
+	pip install --upgrade pip
+	# install test project and package dependencies
 	pip install -r requirements.txt
-	pip install .
-test:
+	# install package and dev dependencies (see setup.py)
+	pip install '.[dev]'
+test: ## Run package tests
 	python -m pytest tests
-lint:
-	python -m flake8 src/instant_article/ --ignore=E501,F401,E203,E128,E402,E731,F821,E712,W503,F811
-format:
-	black src/instant_article
-	black tests/
-	make lint
-sort:
-	isort tests
-	isort src/instant_article
-coverage:
-	python -m pytest --cov-report term --cov-report xml --cov=src/instant_article tests/
-	python -m coveralls
-show:
-	python -m pytest --cov-report term --cov-report html --cov=src/instant_article tests/
-cov:
-	python -m pytest --cov-report term --cov-report xml --cov=src/instant_article tests/
-publish:
-	pip install twine
+ci: ## [CI] Run package tests and lint
 	make test
-	python setup.py sdist
+	make lint
+lint: ## Run code linting
+	python -m flake8 .
+format: ## Format code with Black
+	black src
+coverage: ## Run package tests and upload coverage reports
+	python -m pytest --cov-report term --cov-report xml --cov=src/masonite/instant_article tests
+publish: ## Publish package to pypi
+	python setup.py sdist bdist_wheel
 	twine upload dist/*
-	rm -fr build dist .egg instant_article.egg-info
-	rm -rf dist/*
-pub:
-	python setup.py sdist
-	twine upload dist/*
-	rm -fr build dist .egg instant_article.egg-info
-	rm -rf dist/*
-pypirc:
+	rm -fr build dist .egg src/instant_article.egg-info
+pypirc: ## Copy the template .pypirc in the repo to your home directory
 	cp .pypirc ~/.pypirc

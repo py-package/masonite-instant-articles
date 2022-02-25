@@ -65,11 +65,7 @@ class InstantArticle:
         return self
 
     def validate(self):
-        force = (
-            config("instant_article")
-            .get("instant_article")
-            .get("force_validate", False)
-        )
+        force = config("instant_article").get("instant_article").get("force_validate", False)
         _required_fields = [
             "id",
             "title",
