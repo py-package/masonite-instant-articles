@@ -1,7 +1,7 @@
 # Instant Articles
 
 <p align="center">
-    <img src="https://banners.beyondco.de/instant-article.png?theme=light&packageManager=pip+install&packageName=masonite-instant-article&pattern=topography&style=style_1&description=File management solution for Masonite&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Fgblobscdn.gitbook.com%2Fspaces%2F-L9uc-9XAlqhXkBwrLMA%2Favatar.png">
+    <img src="https://banners.beyondco.de/Masonite%20Instant%20Article.png?theme=light&packageManager=pip+install&packageName=masonite-instant-article&pattern=charlieBrown&style=style_2&description=generate%20facebooks%20instant%20articles%20and%20feeds.&md=1&showWatermark=1&fontSize=100px&images=adjustments&widths=50&heights=50">
 </p>
 
 <p align="center">

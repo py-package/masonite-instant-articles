@@ -5,7 +5,8 @@
 | Masonite Instant Articles
 |--------------------------------------------------------------------------
 |
-| You can configure various routes for either rss feeds or instant articles depending upon your needs.
+| You can configure various routes for either rss feeds or
+| instant articles depending upon your needs.
 |
 """
 
