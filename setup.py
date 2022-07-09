@@ -8,7 +8,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.8',
+    version='0.1.1',
     packages=[
         'instant_article',
         'instant_article.config',
@@ -24,10 +24,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     # The project's main homepage.
-    url="https://github.com/yubarajshrestha/masonite-instant-articles",
+    url="https://github.com/py-package/masonite-instant-articles",
     # Author details
     author='Yubaraj Shrestha',
-    author_email='companion.krish@outlook.com',
+    author_email='yubaraj@pypackage.com',
     # Choose your license
     license='MIT',
     # If your package should include things you specify in your MANIFEST.in file

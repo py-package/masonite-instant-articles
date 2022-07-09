@@ -10,7 +10,7 @@ When contributing to this repository, **please first discuss the change you wish
 
 First you should configure your local environment to be able to make changes in this package.
 
-1. Fork the `https://github.com/yubarajshrestha/masonite-instant-articles` repo.
+1. Fork the `https://github.com/py-package/masonite-instant-articles` repo.
 2. Clone that repo into your computer: `git clone http://github.com/your-username/masonite-instant-articles.git`.
 3. Checkout the current release branch \(example: `master`\).
 4. Run `git pull origin master` to get the current release version.
