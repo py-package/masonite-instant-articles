@@ -49,7 +49,6 @@ class InstantArticleResolver:
     def _resolve_items(self, resolver):
         try:
             module = importlib.import_module(resolver)
-
             model = getattr(module, resolver.split(".")[-1])
 
             items = []

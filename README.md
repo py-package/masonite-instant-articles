@@ -8,7 +8,7 @@
   
   <img alt="GitHub Workflow Status" src="https://github.com/py-package/masonite-instant-articles/actions/workflows/python-package.yml/badge.svg">
   <img alt="PyPI" src="https://img.shields.io/pypi/v/masonite-instant-article">
-  <img src="https://img.shields.io/badge/python-3.7+-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python Version">
   <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/py-package/masonite-instant-articles">
   <img alt="License" src="https://img.shields.io/github/license/py-package/masonite-instant-articles">
   <a href="https://github.com/py-package/masonite-instant-article/stargazers"><img alt="star" src="https://img.shields.io/github/stars/py-package/masonite-instant-articles" /></a>
